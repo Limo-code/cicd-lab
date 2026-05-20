@@ -42,12 +42,12 @@ jobs:
 
       - name: Run Lint
         run: npm run lint
-      
+
       - name: Run tests
         run: |
           mkdir -p reports
           npm test -- --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml
-      
+
       # compute image
 
       - name: Compute image tag
