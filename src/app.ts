@@ -6,7 +6,6 @@ export function buildApp(options: FastifyServerOptions = {}) {
     ...options
   });
 
-  
   app.get('/', async () => {
     return {
       message: 'CI/CD Lab Fastify app is running',
@@ -16,7 +15,7 @@ export function buildApp(options: FastifyServerOptions = {}) {
 
   app.get('/health', async () => {
     return {
-      status: 'ok'
+      status: 'okk'
     };
   });
 
