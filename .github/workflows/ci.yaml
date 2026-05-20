@@ -34,6 +34,11 @@ jobs:
         run: npm ci
 
       # add your steps here, e.g. lint, test, build etc.
+      - name: Format check
+        run: npm run format:check
+      
+      - name: Lint
+        run: npm run lint
 
       - name: Compute image tag
         id: meta
