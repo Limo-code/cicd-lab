@@ -1,4 +1,4 @@
-name: "ci_112062207"
+name: 'ci_112062207'
 
 on:
   push:
@@ -41,12 +41,12 @@ jobs:
 
       - name: Run Lint
         run: npm run lint
-      
+
       - name: Run tests
         run: |
           mkdir -p reports
           npm test -- --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml
-      
+
       # compute image
 
       - name: Compute image tag
@@ -73,7 +73,6 @@ jobs:
       - name: Build Docker image
         if: ${{ matrix.node-version == '24' }}
         run: docker build -t my-app:${{ steps.meta.outputs.image_tag }} .
-
 
   cd:
     if: ${{ startsWith(github.ref, 'refs/heads/release/') }}
