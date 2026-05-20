@@ -45,7 +45,7 @@ jobs:
           name: Vitest Results
           path: reports/vitest-junit.xml
           reporter: jest-junit
-          
+
       - name: Run TypeScript typecheck
         run: npm run typecheck
 
