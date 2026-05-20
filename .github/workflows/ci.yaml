@@ -36,7 +36,7 @@ jobs:
       # add your steps here, e.g. lint, test, build etc.
       - name: Format check
         run: npm run format:check
-      
+
       - name: Lint
         run: npm run lint
 
