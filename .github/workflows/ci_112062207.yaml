@@ -52,7 +52,7 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: Vitest Results
-          path: reports/vitest-junit.xml
+        path: reports/vitest-junit.xml
           reporter: jest-junit
 
       # compute image
