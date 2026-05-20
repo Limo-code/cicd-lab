@@ -47,6 +47,14 @@ jobs:
           mkdir -p reports
           npm test -- --reporter=default --reporter=junit --outputFile.junit=reports/vitest-junit.xml
 
+      - name: Test report
+        uses: dorny/test-reporter@v3
+        if: ${{ !cancelled() }}
+        with:
+          name: Vitest Results
+          path: reports/vitest-*.xml
+          reporter: jest-junit
+
       # compute image
 
       - name: Compute image tag
