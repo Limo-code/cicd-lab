@@ -33,6 +33,13 @@ jobs:
         run: npm ci
 
       # add your steps here, e.g. lint, test, build etc.
+
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+
+      - name: Run Lint
+        run: npm run lint
+
       - name: Run tests
         run: |
           mkdir -p reports
@@ -46,14 +53,8 @@ jobs:
           path: reports/vitest-junit.xml
           reporter: jest-junit
 
-      - name: Run TypeScript typecheck
-        run: npm run typecheck
-
       - name: Run Prettier check
         run: npm run format:check
-
-      - name: Run Lint
-        run: npm run lint
 
       # compute image
 
